@@ -216,11 +216,13 @@ section{padding:clamp(72px,12vw,150px) 0}
 
 /* ---------- MAP ---------- */
 .map-sec{padding-top:0}
-.map{position:relative;border-radius:22px;overflow:hidden;height:clamp(340px,55vh,520px);border:1px solid var(--line)}
+.map{position:relative;border-radius:22px;overflow:hidden;height:clamp(420px,60vh,560px);border:1px solid var(--line)}
 .map iframe{width:100%;height:100%;border:0;filter:saturate(.85)}
-.map .card-addr{position:absolute;left:20px;top:20px;background:var(--paper);border-radius:16px;padding:1.1rem 1.3rem;box-shadow:0 20px 40px -20px rgba(0,0,0,.35);max-width:300px}
+.map .card-addr{position:absolute;left:20px;top:20px;max-height:calc(100% - 40px);overflow:auto;background:var(--paper);border-radius:16px;padding:1.1rem 1.3rem;box-shadow:0 20px 40px -20px rgba(0,0,0,.35);max-width:300px}
 .map .card-addr b{font-family:var(--serif);font-size:1.4rem;font-weight:400}
 .map .card-addr p{font-size:.9rem;color:var(--muted);margin:.3rem 0 .9rem}
+.map .card-addr .route-note{font-size:.84rem;line-height:1.45;color:var(--ink);background:var(--cream);border-left:3px solid var(--clay);padding:.55rem .7rem;border-radius:8px}
+.map .card-addr .route-note b{font-family:var(--sans);font-size:inherit;font-weight:700}
 @media (max-width:600px){.map .card-addr{position:static;max-width:none;border-radius:0}.map{height:auto}.map iframe{height:340px}}
 
 /* ---------- FOOTER ---------- */
@@ -428,7 +430,7 @@ footer a:hover{color:#fff}
         <div><b>Ostrvica</b><span>kameni vrh sa ostacima srednjovekovnog grada</span></div>
         <div><b>Veliki i Mali Šturac</b><span>šumske staze i vidikovci</span></div>
         <div><b>Takovo i Gornji Milanovac</b><span>izleti kolima</span></div>
-        <div><b>Beograd</b><span>stotinak kilometara, oko sat i po vožnje</span></div>
+        <div><b>Beograd</b><span>stotinak kilometara, manje od dva sata vožnje</span></div>
       </div>
     </div>
   </div>
@@ -493,9 +495,9 @@ footer a:hover{color:#fff}
             <span class="ic c-ig"><svg><use href="#i-ig"/></svg></span>
             <span><b>Instagram</b><small>@marija_stevanovic_rudnik</small></span>
           </a>
-          <a class="cl" href="https://share.google/xfswKmzJh2ShZKRxh" target="_blank" rel="noopener">
+          <a class="cl" href="https://www.google.com/maps/dir/?api=1&amp;destination=44.137154,20.500679&amp;waypoints=44.13598,20.49876&amp;travelmode=driving" target="_blank" rel="noopener">
             <span class="ic c-map"><svg><use href="#i-map"/></svg></span>
-            <span><b>Google mape</b><small>Vojislava Ilića 20, Rudnik</small></span>
+            <span><b>Navigacija do kućice</b><small>Vojislava Ilića 20 – pravim putem, ne pored bazena</small></span>
           </a>
         </div>
         <div class="rules">
@@ -520,7 +522,8 @@ footer a:hover{color:#fff}
       <div class="card-addr">
         <b>Koji Vajat</b>
         <p>Vojislava Ilića 20<br>32313 Rudnik, Srbija</p>
-        <a class="btn btn-clay" href="https://www.google.com/maps/dir/?api=1&destination=44.137154,20.500679" target="_blank" rel="noopener"><svg><use href="#i-map"/></svg>Navigacija</a>
+        <p class="route-note"><b>Dolazak kolima:</b> prilazite ulicom Vojislava Ilića, iz pravca prodavnice Metalac. <b>Ne koristite put pored bazena</b> – nije prohodan za sva vozila. Dugme ispod vodi pravim putem.</p>
+        <a class="btn btn-clay" href="https://www.google.com/maps/dir/?api=1&amp;destination=44.137154,20.500679&amp;waypoints=44.13598,20.49876&amp;travelmode=driving" target="_blank" rel="noopener"><svg><use href="#i-map"/></svg>Navigacija</a>
       </div>
     </div>
   </div>
@@ -560,7 +563,7 @@ footer a:hover{color:#fff}
   <a class="c-phone" href="tel:+381644488594" aria-label="Pozovi"><svg><use href="#i-phone"/></svg></a>
   <a class="c-viber" href="viber://chat?number=%2B381644488594" aria-label="Viber"><svg><use href="#i-viber"/></svg></a>
   <a class="c-ig" href="https://www.instagram.com/marija_stevanovic_rudnik" target="_blank" rel="noopener" aria-label="Instagram"><svg><use href="#i-ig"/></svg></a>
-  <a class="c-map" href="https://share.google/xfswKmzJh2ShZKRxh" target="_blank" rel="noopener" aria-label="Mapa"><svg><use href="#i-map"/></svg></a>
+  <a class="c-map" href="https://www.google.com/maps/dir/?api=1&amp;destination=44.137154,20.500679&amp;waypoints=44.13598,20.49876&amp;travelmode=driving" target="_blank" rel="noopener" aria-label="Mapa"><svg><use href="#i-map"/></svg></a>
   <a class="c-book wide" href="https://www.booking.com/hotel/rs/koji-vajat.sr.html" target="_blank" rel="noopener"><svg><use href="#i-cal"/></svg>Rezerviši</a>
 </div>
 
