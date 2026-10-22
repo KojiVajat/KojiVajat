@@ -57,15 +57,13 @@ U adminu:
   "Publish" -> sajt se osveži za 1–2 minuta.
 
 ----------------------------------------------------------------
-KORAK 4 – Domen kojivajat.rs                               ~15 min + čekanje
+KORAK 4 – Domen  ✓ URAĐENO
 ----------------------------------------------------------------
-1. Kupite domen kod registra (npr. Loopia, mCloud, Mojsite...).
-   Okvirno 1.500–2.500 din/god za .rs (prva godina često jeftinija).
-2. Netlify: Domain management -> "Add a domain" -> kojivajat.rs.
-3. Netlify ispiše šta treba upisati kod registra (DNS):
-     - ili promena "name servera" na Netlify (najlakše),
-     - ili zapisi: A  @  -> 75.2.60.5   i   CNAME  www -> <ime>.netlify.app
-4. Za par sati sajt radi na https://kojivajat.rs (HTTPS automatski).
+kojivajat.com je kupljen preko Netlify-ja (Netlify -> Domains).
+Obnova: 16,99 USD godišnje, automatski sa kartice – proverite da je
+kartica važeća pred istek. DNS i HTTPS podešava Netlify sam.
+Opciono kasnije: kojivajat.rs kod domaćeg registra (npr. Loopia)
+pa ga u Netlify-ju dodati kao "domain alias" da vodi na .com.
 
 ----------------------------------------------------------------
 Posle toga
