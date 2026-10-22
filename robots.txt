@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /evidencija.html
+
+Sitemap: https://kojivajat.com/sitemap.xml

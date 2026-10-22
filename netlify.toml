@@ -2,6 +2,13 @@
 [build]
   publish = "."
 
+# stara Netlify adresa vodi na zvanični domen
+[[redirects]]
+  from = "https://kojivajat.netlify.app/*"
+  to = "https://kojivajat.com/:splat"
+  status = 301
+  force = true
+
 [[headers]]
   for = "/assets/*"
   [headers.values]
