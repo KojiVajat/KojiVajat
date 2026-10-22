@@ -601,14 +601,9 @@ const onScroll = () => {
   dock.classList.toggle('show', y > innerHeight * .6);
 };
 addEventListener('scroll', onScroll, { passive: true }); onScroll();
-// Netlify natpis: prati da li je prikazan (posetilac ga može zatvoriti)
-const nlCheck = () => {
-  const f = [...document.querySelectorAll('body > iframe, body > div')].find(el => /2147483645/.test(el.getAttribute('style') || '') || el.id === 'nl-badge');
-  const on = !!f && f.offsetParent !== null && f.getBoundingClientRect().height > 8;
-  document.body.classList.toggle('nl-badge', on);
-};
-new MutationObserver(nlCheck).observe(document.body, { childList: true, subtree: false, attributes: true, attributeFilter: ['style'] });
-setInterval(nlCheck, 3000); setTimeout(nlCheck, 800);
+// Netlify (besplatni nalog) ubacuje natpis dole desno: ikonice idu iznad njega
+const nlCheck = () => { if (document.querySelector('script[src*="/.netlify/scripts/hud"], #nl-badge-frame')) document.body.classList.add('nl-badge'); };
+nlCheck(); setTimeout(nlCheck, 1500); addEventListener('load', nlCheck);
 
 /* Reveal + brojači */
 const io = new IntersectionObserver(es => es.forEach(e => {
