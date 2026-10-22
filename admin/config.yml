@@ -8,8 +8,8 @@ backend:
     uploadMedia: "Nova fotografija: {{path}}"
     deleteMedia: "Obrisana fotografija: {{path}}"
 
-site_url: https://kojivajat.rs
-display_url: https://kojivajat.rs
+site_url: https://kojivajat.com
+display_url: https://kojivajat.com
 media_folder: assets/uploads
 public_folder: /assets/uploads
 

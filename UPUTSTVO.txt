@@ -1,4 +1,4 @@
-KOJI VAJAT – kako sajt postaje zvaničan (kojivajat.rs)
+KOJI VAJAT – zvanični sajt: https://kojivajat.com  (domen kupljen preko Netlify-ja)
 =====================================================
 
 Sadržaj foldera
@@ -39,7 +39,7 @@ KORAK 3 – Prijava u admin panel                            ~5 min
 ----------------------------------------------------------------
 A) GitHub: Settings -> Developer settings -> OAuth Apps -> New OAuth App
      Application name:          Koji Vajat admin
-     Homepage URL:              https://kojivajat.rs   (ili netlify adresa)
+     Homepage URL:              https://kojivajat.com
      Authorization callback URL: https://api.netlify.com/auth/done
    -> Register. Kopirajte "Client ID", pa "Generate a new client secret".
 B) Netlify: Site configuration -> Access & security -> OAuth
@@ -71,7 +71,7 @@ KORAK 4 – Domen kojivajat.rs                               ~15 min + čekanje
 Posle toga
 ----------------------------------------------------------------
 - Link sajta u Instagram bio i u Google profil objekta (Google mape).
-- Evidencija: https://kojivajat.rs/evidencija.html – na telefonu
+- Evidencija: https://kojivajat.com/evidencija.html – na telefonu
   "Dodaj na početni ekran". Podaci ostaju na uređaju; povremeno
   meni (⋯) -> "Sačuvaj rezervnu kopiju".
 - Upiti sa sajta stižu na Viber: 064 448 8594.
