@@ -1,7 +1,7 @@
 # Admin panel sajta Koji Vajat (Decap CMS) – otvara se na https://<vas-domen>/admin
 backend:
   name: github
-  repo: KojiVajat/kojivajat
+  repo: KojiVajat/KojiVajat
   branch: main
   commit_messages:
     update: "Izmena: {{slug}}"
