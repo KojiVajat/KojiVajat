@@ -1,0 +1,18 @@
+# Netlify: statički sajt, bez build koraka
+[build]
+  publish = "."
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+[[headers]]
+  for = "/data/*"
+  [headers.values]
+    Cache-Control = "no-cache"
+
+[[headers]]
+  for = "/evidencija.html"
+  [headers.values]
+    X-Robots-Tag = "noindex"

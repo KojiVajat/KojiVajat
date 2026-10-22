@@ -1,0 +1,134 @@
+{
+  "slike": [
+    {
+      "slika": "/assets/img/dnevna-sirok.webp",
+      "natpis": "Dnevna soba sa kuhinjom",
+      "kategorija": "in"
+    },
+    {
+      "slika": "/assets/img/spolja-panorama.webp",
+      "natpis": "Kućica u zelenilu",
+      "kategorija": "out"
+    },
+    {
+      "slika": "/assets/img/spavaca-1.webp",
+      "natpis": "Spavaća soba pod krovom",
+      "kategorija": "in"
+    },
+    {
+      "slika": "/assets/img/dron-iznad.webp",
+      "natpis": "Rudnik iz vazduha",
+      "kategorija": "air"
+    },
+    {
+      "slika": "/assets/img/pogled-staze.webp",
+      "natpis": "Bazeni Rudnik – oko 200 m od kućice",
+      "kategorija": "air"
+    },
+    {
+      "slika": "/assets/img/kutak-2.webp",
+      "natpis": "Kutak pored prozora",
+      "kategorija": "in"
+    },
+    {
+      "slika": "/assets/img/terasa-cela.webp",
+      "natpis": "Drvena terasa celom dužinom kuće",
+      "kategorija": "out"
+    },
+    {
+      "slika": "/assets/img/dnevna-1.webp",
+      "natpis": "Dnevni boravak",
+      "kategorija": "in"
+    },
+    {
+      "slika": "/assets/img/kuhinja.webp",
+      "natpis": "Kuhinja",
+      "kategorija": "in"
+    },
+    {
+      "slika": "/assets/img/pogled-sela.webp",
+      "natpis": "Pogled sa planine",
+      "kategorija": "air"
+    },
+    {
+      "slika": "/assets/img/vino.webp",
+      "natpis": "Dobrodošlica",
+      "kategorija": "in"
+    },
+    {
+      "slika": "/assets/img/spavaca-2.webp",
+      "natpis": "Druga spavaća soba",
+      "kategorija": "in"
+    },
+    {
+      "slika": "/assets/img/dron-kuca.webp",
+      "natpis": "Koji Vajat iz vazduha",
+      "kategorija": "air"
+    },
+    {
+      "slika": "/assets/img/trpezarija.webp",
+      "natpis": "Trpezarija",
+      "kategorija": "in"
+    },
+    {
+      "slika": "/assets/img/galerija.webp",
+      "natpis": "Galerija na spratu",
+      "kategorija": "in"
+    },
+    {
+      "slika": "/assets/img/spolja-front.webp",
+      "natpis": "Pogled na kućicu",
+      "kategorija": "out"
+    },
+    {
+      "slika": "/assets/img/kupatilo.webp",
+      "natpis": "Kupatilo",
+      "kategorija": "in"
+    },
+    {
+      "slika": "/assets/img/terasa-bok.webp",
+      "natpis": "Natkrivena terasa",
+      "kategorija": "out"
+    },
+    {
+      "slika": "/assets/img/dnevna-2.webp",
+      "natpis": "Dnevna soba i stepenice",
+      "kategorija": "in"
+    },
+    {
+      "slika": "/assets/img/terasa-trem.webp",
+      "natpis": "Trem od drveta",
+      "kategorija": "out"
+    },
+    {
+      "slika": "/assets/img/spolja-ulaz.webp",
+      "natpis": "Ulaz u dvorište",
+      "kategorija": "out"
+    },
+    {
+      "slika": "/assets/img/pogled-suma.webp",
+      "natpis": "Šume Rudnika",
+      "kategorija": "air"
+    },
+    {
+      "slika": "/assets/img/spavaca-3.webp",
+      "natpis": "Krevet od punog drveta",
+      "kategorija": "in"
+    },
+    {
+      "slika": "/assets/img/spolja-dvoriste.webp",
+      "natpis": "Dvorište",
+      "kategorija": "out"
+    },
+    {
+      "slika": "/assets/img/kamin.webp",
+      "natpis": "Peć na drva",
+      "kategorija": "in"
+    },
+    {
+      "slika": "/assets/img/pogled-planina.webp",
+      "natpis": "Planina Rudnik",
+      "kategorija": "air"
+    }
+  ]
+}

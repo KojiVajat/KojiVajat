@@ -1,0 +1,77 @@
+KOJI VAJAT – kako sajt postaje zvaničan (kojivajat.rs)
+=====================================================
+
+Sadržaj foldera
+  index.html          sajt za goste
+  evidencija.html     privatna evidencija rezervacija (ne linkuje se sa sajta)
+  admin/              admin panel (galerija + prijava/odjava/broj gostiju)
+  data/galerija.json  spisak fotografija u galeriji (menja se kroz admin)
+  data/info.json      prijava, odjava, broj gostiju (menja se kroz admin)
+  assets/             fotografije i video
+  netlify.toml        podešavanja hostinga
+
+Šta radite VI (nalozi, lozinke, plaćanje) – ostalo radi Claude.
+
+----------------------------------------------------------------
+KORAK 1 – GitHub nalog (tu se čuvaju fajlovi sajta)        ~5 min
+----------------------------------------------------------------
+1. github.com/signup – napravite besplatan nalog.
+2. Gore desno "+" -> "New repository"
+     Repository name: kojivajat
+     Private (može i Public)
+     NE štiklirati "Add a README"
+   -> "Create repository".
+3. Javite Claude-u svoje GitHub korisničko ime.
+   Claude postavlja fajlove; kad iskoči prozor za prijavu na GitHub,
+   prijavite se VI.
+
+----------------------------------------------------------------
+KORAK 2 – Netlify (hosting, besplatno)                     ~5 min
+----------------------------------------------------------------
+1. app.netlify.com/signup -> "Sign up with GitHub".
+2. "Add new site" -> "Import an existing project" -> GitHub -> kojivajat.
+3. Build command: prazno, Publish directory: .  -> "Deploy".
+4. Sajt radi na adresi tipa  kojivajat-xyz.netlify.app
+   (Site configuration -> Change site name -> "kojivajat" => kojivajat.netlify.app)
+
+----------------------------------------------------------------
+KORAK 3 – Prijava u admin panel                            ~5 min
+----------------------------------------------------------------
+A) GitHub: Settings -> Developer settings -> OAuth Apps -> New OAuth App
+     Application name:          Koji Vajat admin
+     Homepage URL:              https://kojivajat.rs   (ili netlify adresa)
+     Authorization callback URL: https://api.netlify.com/auth/done
+   -> Register. Kopirajte "Client ID", pa "Generate a new client secret".
+B) Netlify: Site configuration -> Access & security -> OAuth
+   -> "Install provider" -> GitHub -> nalepite Client ID i Secret -> Install.
+C) Otvorite  https://<adresa-sajta>/admin  -> "Login with GitHub".
+
+Sestra kao admin: neka napravi svoj GitHub nalog, a vi je dodate u
+repozitorijum: GitHub -> kojivajat -> Settings -> Collaborators -> Add people.
+Posle toga se i ona prijavljuje na /admin.
+
+U adminu:
+  Galerija fotografija – "Add" dodaje sliku (na vrh), natpis, kategorija;
+                         prevlačenjem menjate redosled; X briše.
+  Osnovni podaci       – prijava, odjava, broj gostiju.
+  "Publish" -> sajt se osveži za 1–2 minuta.
+
+----------------------------------------------------------------
+KORAK 4 – Domen kojivajat.rs                               ~15 min + čekanje
+----------------------------------------------------------------
+1. Kupite domen kod registra (npr. Loopia, mCloud, Mojsite...).
+   Okvirno 1.500–2.500 din/god za .rs (prva godina često jeftinija).
+2. Netlify: Domain management -> "Add a domain" -> kojivajat.rs.
+3. Netlify ispiše šta treba upisati kod registra (DNS):
+     - ili promena "name servera" na Netlify (najlakše),
+     - ili zapisi: A  @  -> 75.2.60.5   i   CNAME  www -> <ime>.netlify.app
+4. Za par sati sajt radi na https://kojivajat.rs (HTTPS automatski).
+
+----------------------------------------------------------------
+Posle toga
+----------------------------------------------------------------
+- Link sajta u Instagram bio i u Google profil objekta (Google mape).
+- Evidencija: https://kojivajat.rs/evidencija.html – na telefonu
+  "Dodaj na početni ekran". Podaci ostaju na uređaju; povremeno
+  meni (⋯) -> "Sačuvaj rezervnu kopiju".
+- Upiti sa sajta stižu na Viber: 064 448 8594.

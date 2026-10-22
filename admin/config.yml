@@ -1,0 +1,50 @@
+# Admin panel sajta Koji Vajat (Decap CMS) – otvara se na https://<vas-domen>/admin
+backend:
+  name: github
+  repo: GITHUB_KORISNIK/kojivajat   # <- zameniti posle pravljenja GitHub repozitorijuma
+  branch: main
+  commit_messages:
+    update: "Izmena: {{slug}}"
+    uploadMedia: "Nova fotografija: {{path}}"
+    deleteMedia: "Obrisana fotografija: {{path}}"
+
+site_url: https://kojivajat.rs
+display_url: https://kojivajat.rs
+media_folder: assets/uploads
+public_folder: /assets/uploads
+
+collections:
+  - name: sajt
+    label: Sajt
+    editor:
+      preview: false
+    files:
+      - name: galerija
+        label: Galerija fotografija
+        file: data/galerija.json
+        format: json
+        fields:
+          - label: Fotografije (redosled = redosled na sajtu)
+            name: slike
+            widget: list
+            add_to_top: true
+            summary: "{{fields.natpis}}"
+            fields:
+              - { label: Fotografija, name: slika, widget: image, allow_multiple: false }
+              - { label: Natpis, name: natpis, widget: string }
+              - label: Kategorija
+                name: kategorija
+                widget: select
+                default: in
+                options:
+                  - { label: Enterijer, value: in }
+                  - { label: Spolja, value: out }
+                  - { label: Iz vazduha, value: air }
+      - name: info
+        label: Osnovni podaci
+        file: data/info.json
+        format: json
+        fields:
+          - { label: "Prijava (npr. 15:00 – 20:00)", name: prijava, widget: string }
+          - { label: "Odjava (npr. 08:00 – 11:00)", name: odjava, widget: string }
+          - { label: "Najviše gostiju", name: gostiju, widget: string }

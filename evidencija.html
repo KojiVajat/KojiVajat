@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="sr-Latn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Koji Vajat · Evidencija</title>
+<meta name="theme-color" content="#1f2a22">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231f2a22'/%3E%3Cpath d='M32 12 10 34h6v18h32V34h6z' fill='%23c8642f'/%3E%3C/svg%3E">
+<style>
+:root{--ink:#1c241e;--muted:#667067;--line:#e4dfd4;--bg:#f6f2ea;--card:#fff;--forest:#1f2a22;--clay:#c8642f;--moss:#3d5a40;
+  --s-booking:#1e5bc6;--s-telefon:#3d7a4a;--s-viber:#7360f2;--s-instagram:#d6249f;--s-ponovo:#c8642f;--s-ostalo:#7b7f86;
+  --r:14px;--sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+@media (prefers-color-scheme:dark){:root{--ink:#e9ece6;--muted:#9aa39a;--line:#2f3832;--bg:#141a16;--card:#1c241e}}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);font-size:15px;line-height:1.45;padding-bottom:90px}
+button,input,select,textarea{font:inherit;color:inherit}
+header{background:var(--forest);color:#f6f1e7;padding:14px 16px calc(14px);position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:10px}
+header h1{font-size:1.05rem;font-weight:700;flex:1}
+header h1 small{display:block;font-weight:400;opacity:.7;font-size:.78rem}
+.ib{background:rgba(255,255,255,.12);border:0;border-radius:10px;height:38px;min-width:38px;padding:0 10px;cursor:pointer;color:#fff}
+main{max-width:1100px;margin:0 auto;padding:14px}
+.monthbar{display:flex;align-items:center;gap:8px;margin:4px 0 12px}
+.monthbar h2{flex:1;text-align:center;font-size:1.25rem;text-transform:capitalize}
+.nb{width:42px;height:42px;border-radius:12px;border:1px solid var(--line);background:var(--card);cursor:pointer;font-size:1.2rem}
+.today-btn{height:42px;padding:0 12px;border-radius:12px;border:1px solid var(--line);background:var(--card);cursor:pointer;font-size:.85rem}
+.cal{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.dow,.grid{display:grid;grid-template-columns:repeat(7,1fr)}
+.dow div{font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);padding:8px 6px;text-align:center;border-bottom:1px solid var(--line)}
+.day{min-height:78px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:4px;position:relative;cursor:pointer;display:flex;flex-direction:column;gap:2px}
+.day:nth-child(7n){border-right:0}
+.day.out{background:repeating-linear-gradient(135deg,transparent 0 6px,rgba(127,127,127,.06) 6px 12px);color:var(--muted)}
+.day .n{font-size:.8rem;font-weight:600}
+.day.today .n{background:var(--clay);color:#fff;border-radius:999px;width:22px;height:22px;display:grid;place-items:center}
+.day.wknd{background:rgba(200,100,47,.04)}
+.bar{font-size:.72rem;color:#fff;border-radius:6px;padding:2px 5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer}
+.bar.start{border-top-left-radius:10px;border-bottom-left-radius:10px}
+.bar.cont{opacity:.85}
+.bar.upit{background:repeating-linear-gradient(135deg,#9aa0a6 0 6px,#8a9096 6px 12px)!important}
+.bar.chk{outline:2px dashed rgba(0,0,0,.35);outline-offset:-2px}
+@media (max-width:640px){.day{min-height:58px;padding:3px}.bar{font-size:0;height:8px;padding:0}.bar.start{font-size:.62rem;height:auto;padding:1px 4px}}
+.legend{display:flex;gap:10px;flex-wrap:wrap;font-size:.78rem;color:var(--muted);margin:10px 2px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:4px;vertical-align:-1px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 0}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:12px}
+.stat b{display:block;font-size:1.4rem}
+.stat span{font-size:.78rem;color:var(--muted)}
+@media (max-width:640px){.stats{grid-template-columns:repeat(2,1fr)}}
+h3{font-size:1rem;margin:20px 2px 10px;display:flex;align-items:center;gap:8px}
+h3 .cnt{background:var(--line);border-radius:999px;font-size:.75rem;padding:1px 8px}
+.list{display:grid;gap:8px}
+.res{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--c,#999);border-radius:12px;padding:10px 12px;display:grid;grid-template-columns:1fr auto;gap:4px 10px;cursor:pointer}
+.res .nm{font-weight:700}
+.res .dt{font-size:.85rem;color:var(--muted)}
+.res .tags{grid-column:1/-1;display:flex;gap:6px;flex-wrap:wrap}
+.tag{font-size:.72rem;padding:2px 8px;border-radius:999px;background:var(--bg);border:1px solid var(--line)}
+.tag.warn{background:#fff1e6;border-color:#f3c9a6;color:#9a4a12}
+.tag.ok{background:#e9f5ea;border-color:#bfe0c2;color:#2c6a35}
+.tag.off{text-decoration:line-through;opacity:.7}
+.res .act{display:flex;gap:6px;align-items:start}
+.res .act a{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:var(--bg);border:1px solid var(--line);text-decoration:none;font-size:1rem}
+.empty{color:var(--muted);font-size:.9rem;padding:14px;text-align:center;background:var(--card);border:1px dashed var(--line);border-radius:12px}
+.search{width:100%;padding:10px 12px;border-radius:12px;border:1px solid var(--line);background:var(--card);margin-bottom:8px}
+.fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:30;background:var(--clay);color:#fff;border:0;border-radius:999px;height:56px;padding:0 22px;font-weight:700;font-size:1rem;box-shadow:0 12px 30px -10px rgba(200,100,47,.8);cursor:pointer}
+/* modal */
+dialog{border:0;border-radius:18px;padding:0;width:min(560px,96vw);max-height:92vh;background:var(--card);color:var(--ink);box-shadow:0 30px 80px rgba(0,0,0,.35)}
+dialog::backdrop{background:rgba(10,14,11,.55)}
+.mh{display:flex;align-items:center;justify-content:space-between;padding:16px 18px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--card);z-index:2}
+.mh h4{font-size:1.1rem}
+.mb{padding:16px 18px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.mb label{display:flex;flex-direction:column;gap:4px;font-size:.78rem;font-weight:600;color:var(--muted)}
+.mb .full{grid-column:1/-1}
+.mb input,.mb select,.mb textarea{padding:10px 11px;border:1px solid var(--line);border-radius:10px;background:var(--bg);font-size:1rem;width:100%}
+.mb .chk{flex-direction:row;align-items:center;gap:8px;font-size:.92rem;color:var(--ink);font-weight:500;padding:8px 10px;border:1px solid var(--line);border-radius:10px;background:var(--bg)}
+.mb .chk input{width:20px;height:20px}
+.info{grid-column:1/-1;font-size:.88rem;padding:10px 12px;border-radius:10px;background:var(--bg)}
+.info.err{background:#fde8e6;color:#9b2318}
+.mf{display:flex;gap:8px;padding:14px 18px;border-top:1px solid var(--line);position:sticky;bottom:0;background:var(--card)}
+.btn{border:0;border-radius:12px;height:44px;padding:0 16px;font-weight:700;cursor:pointer}
+.btn.pri{background:var(--clay);color:#fff;flex:1}
+.btn.sec{background:var(--bg);border:1px solid var(--line)}
+.btn.del{background:transparent;color:#b3261e;border:1px solid #e9b6b1}
+.menu{display:grid;gap:8px;padding:16px 18px}
+.menu button,.menu label.btn{width:100%;text-align:left;display:flex;align-items:center;gap:10px;background:var(--bg);border:1px solid var(--line)}
+.menu p{font-size:.85rem;color:var(--muted)}
+.toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%) translateY(20px);background:var(--forest);color:#fff;padding:10px 16px;border-radius:999px;font-size:.9rem;opacity:0;transition:.3s;z-index:99;pointer-events:none}
+.toast.on{opacity:1;transform:translateX(-50%)}
+@media print{header,.fab,.nb,.today-btn,.search,#upcomingWrap{display:none!important}body{background:#fff;padding:0}.cal,.stat,.res{break-inside:avoid}}
+</style>
+</head>
+<body>
+<header>
+  <h1>Koji Vajat · Evidencija<small id="sub">Rezervacije i gosti</small></h1>
+  <button class="ib" id="menuBtn" aria-label="Meni">⋯</button>
+</header>
+
+<main>
+  <div class="monthbar">
+    <button class="nb" id="prev" aria-label="Prethodni mesec">‹</button>
+    <h2 id="mTitle"></h2>
+    <button class="nb" id="next" aria-label="Sledeći mesec">›</button>
+    <button class="today-btn" id="todayBtn">Danas</button>
+  </div>
+
+  <div class="cal">
+    <div class="dow"><div>Pon</div><div>Uto</div><div>Sre</div><div>Čet</div><div>Pet</div><div>Sub</div><div>Ned</div></div>
+    <div class="grid" id="grid"></div>
+  </div>
+  <div class="legend" id="legend"></div>
+
+  <div class="stats" id="stats"></div>
+
+  <div id="upcomingWrap">
+    <h3>Sledeći dolasci <span class="cnt" id="upCnt">0</span></h3>
+    <div class="list" id="upcoming"></div>
+  </div>
+
+  <h3>Rezervacije u mesecu <span class="cnt" id="mCnt">0</span></h3>
+  <input class="search" id="q" type="search" placeholder="Pretraga po imenu, telefonu, napomeni…">
+  <div class="list" id="monthList"></div>
+</main>
+
+<button class="fab" id="addBtn">+ Nova rezervacija</button>
+
+<!-- Forma rezervacije -->
+<dialog id="dlg">
+  <form method="dialog" id="frm">
+    <div class="mh"><h4 id="dlgTitle">Nova rezervacija</h4><button class="ib" style="background:var(--bg);color:var(--ink)" value="cancel" formnovalidate aria-label="Zatvori">✕</button></div>
+    <div class="mb">
+      <label class="full">Ime i prezime gosta<input name="ime" required autocomplete="off"></label>
+      <label>Telefon<input name="tel" type="tel" inputmode="tel" placeholder="06x…"></label>
+      <label>Izvor<select name="izvor">
+        <option value="booking">Booking</option><option value="telefon">Telefon</option><option value="viber">Viber</option>
+        <option value="instagram">Instagram</option><option value="ponovo">Ponovni gost</option><option value="ostalo">Ostalo</option></select></label>
+      <label>Dolazak<input name="od" type="date" required></label>
+      <label>Odlazak<input name="do" type="date" required></label>
+      <label>Odrasli<input name="odrasli" type="number" min="1" max="6" value="2"></label>
+      <label>Deca<input name="deca" type="number" min="0" max="6" value="0"></label>
+      <label>Ukupna cena (RSD)<input name="cena" type="number" min="0" step="100" inputmode="numeric"></label>
+      <label>Avans / uplaćeno (RSD)<input name="avans" type="number" min="0" step="100" inputmode="numeric" value="0"></label>
+      <label>Status<select name="status"><option value="potvrdjeno">Potvrđeno</option><option value="upit">Upit / čeka potvrdu</option><option value="otkazano">Otkazano</option></select></label>
+      <label class="chk"><input type="checkbox" name="placeno"> Sve plaćeno</label>
+      <label class="chk"><input type="checkbox" name="eturista"> Prijavljen u eTurista</label>
+      <label class="chk"><input type="checkbox" name="ljubimac"> Dolazi sa ljubimcem</label>
+      <label class="full">Napomena<textarea name="nap" rows="2" placeholder="vreme dolaska, posebni zahtevi, broj lične karte…"></textarea></label>
+      <div class="info" id="calc"></div>
+    </div>
+    <div class="mf">
+      <button type="button" class="btn del" id="delBtn" hidden>Obriši</button>
+      <button type="button" class="btn sec" value="cancel" id="cancelBtn">Otkaži</button>
+      <button type="submit" class="btn pri" value="save" id="saveBtn">Sačuvaj</button>
+    </div>
+  </form>
+</dialog>
+
+<!-- Meni -->
+<dialog id="menu">
+  <div class="mh"><h4>Podešavanja i rezervna kopija</h4><button class="ib" style="background:var(--bg);color:var(--ink)" onclick="menu.close()" aria-label="Zatvori">✕</button></div>
+  <div class="menu">
+    <label style="display:flex;flex-direction:column;gap:4px;font-size:.8rem;font-weight:600;color:var(--muted)">Provizija Booking.com (%)
+      <input id="prov" type="number" min="0" max="40" step="0.5" style="padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--bg)"></label>
+    <button class="btn" id="expJson">💾 Sačuvaj rezervnu kopiju (.json)</button>
+    <label class="btn">📂 Učitaj rezervnu kopiju<input type="file" id="impJson" accept=".json,application/json" hidden></label>
+    <button class="btn" id="expCsv">📊 Izvoz za Excel (.csv)</button>
+    <button class="btn" id="printBtn">🖨️ Štampaj ovaj mesec</button>
+    <p>Podaci se čuvaju samo na ovom uređaju (u pregledaču). Povremeno sačuvajte rezervnu kopiju – npr. pošaljite je sebi na mejl ili Viber – da ih možete preneti na drugi telefon ili računar.</p>
+  </div>
+</dialog>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const KEY = 'kojivajat_rezervacije_v1', SKEY = 'kojivajat_podesavanja_v1';
+const SRC = { booking:'Booking', telefon:'Telefon', viber:'Viber', instagram:'Instagram', ponovo:'Ponovni gost', ostalo:'Ostalo' };
+const MONTHS = ['januar','februar','mart','april','maj','jun','jul','avgust','septembar','oktobar','novembar','decembar'];
+const $ = id => document.getElementById(id);
+
+const load = (k, d) => { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch { return d; } };
+const store = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); return true; } catch { toast('Greška pri čuvanju!'); return false; } };
+let data = load(KEY, []);
+let cfg = Object.assign({ provizija: 15 }, load(SKEY, {}));
+const save = () => store(KEY, data);
+
+/* datumi kao 'YYYY-MM-DD' stringovi, bez vremenskih zona */
+const iso = d => `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+const parse = s => { const [y,m,d] = s.split('-').map(Number); return new Date(y, m-1, d); };
+const addDays = (s, n) => { const d = parse(s); d.setDate(d.getDate()+n); return iso(d); };
+const nightsBetween = (a, b) => Math.round((parse(b) - parse(a)) / 864e5);
+const fmt = s => { const d = parse(s); return `${d.getDate()}.${d.getMonth()+1}.`; };
+const money = n => (Math.round(n||0)).toLocaleString('sr-RS') + ' RSD';
+const today = iso(new Date());
+const color = src => getComputedStyle(document.documentElement).getPropertyValue('--s-'+src).trim() || '#888';
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const neto = r => r.izvor === 'booking' ? (+r.cena||0) * (1 - cfg.provizija/100) : (+r.cena||0);
+const active = r => r.status !== 'otkazano';
+
+let view = new Date(); view.setDate(1);
+
+function render() {
+  const y = view.getFullYear(), m = view.getMonth();
+  $('mTitle').textContent = `${MONTHS[m]} ${y}`;
+  const first = new Date(y, m, 1), last = new Date(y, m+1, 0);
+  const mStart = iso(first), mEnd = iso(last);
+  const offset = (first.getDay() + 6) % 7;
+  const start = new Date(y, m, 1 - offset);
+  const cells = Math.ceil((offset + last.getDate()) / 7) * 7;
+  const live = data.filter(active);
+
+  let html = '';
+  for (let i = 0; i < cells; i++) {
+    const d = new Date(start); d.setDate(start.getDate() + i);
+    const s = iso(d), dow = (d.getDay()+6)%7;
+    const cls = ['day', d.getMonth() !== m && 'out', s === today && 'today', dow >= 5 && 'wknd'].filter(Boolean).join(' ');
+    const bars = live.filter(r => r.od <= s && s < r.do).map(r => {
+      const label = r.od === s || dow === 0 ? esc(r.ime.split(' ')[0]) : '&nbsp;';
+      return `<div class="bar ${r.od===s?'start':'cont'} ${r.status==='upit'?'upit':''}" style="background:${color(r.izvor)}" data-id="${r.id}" title="${esc(r.ime)} · ${fmt(r.od)}–${fmt(r.do)}">${label}</div>`;
+    }).join('');
+    const outs = live.filter(r => r.do === s).map(r => `<div class="bar chk" style="background:transparent;color:var(--muted)" data-id="${r.id}">↗ ${esc(r.ime.split(' ')[0])}</div>`).join('');
+    html += `<div class="${cls}" data-d="${s}"><span class="n">${d.getDate()}</span>${outs}${bars}</div>`;
+  }
+  $('grid').innerHTML = html;
+
+  $('legend').innerHTML = Object.entries(SRC).map(([k,v]) => `<span><i style="background:${color(k)}"></i>${v}</span>`).join('') +
+    `<span><i style="background:#9aa0a6"></i>Upit</span><span>↗ odlazak</span>`;
+
+  // statistika za mesec (noćenja i prihod srazmerno noćima u ovom mesecu)
+  const daysInMonth = last.getDate();
+  let nights = 0, bruto = 0, net = 0, guests = 0, unpaid = 0;
+  const inMonth = data.filter(r => r.od <= mEnd && r.do > mStart);
+  inMonth.filter(r => r.status === 'potvrdjeno').forEach(r => {
+    const a = r.od > mStart ? r.od : mStart, b = r.do <= mEnd ? r.do : addDays(mEnd, 1);
+    const n = nightsBetween(a, b), total = nightsBetween(r.od, r.do) || 1;
+    nights += n; bruto += (+r.cena||0) * n/total; net += neto(r) * n/total;
+    if (r.od >= mStart) guests += (+r.odrasli||0) + (+r.deca||0);
+    if (!r.placeno && r.od >= mStart) unpaid += Math.max(0, (+r.cena||0) - (+r.avans||0));
+  });
+  $('stats').innerHTML = `
+    <div class="stat"><b>${nights}</b><span>noćenja · ${Math.round(nights/daysInMonth*100)}% popunjeno</span></div>
+    <div class="stat"><b>${money(bruto)}</b><span>bruto prihod</span></div>
+    <div class="stat"><b>${money(net)}</b><span>neto (posle provizije ${cfg.provizija}%)</span></div>
+    <div class="stat"><b>${guests}</b><span>gostiju · nenaplaćeno ${money(unpaid)}</span></div>`;
+
+  // sledeći dolasci (30 dana)
+  const lim = addDays(today, 30);
+  const up = live.filter(r => r.do > today && r.od <= lim).sort((a,b) => a.od.localeCompare(b.od));
+  $('upCnt').textContent = up.length;
+  $('upcoming').innerHTML = up.length ? up.map(card).join('') : '<div class="empty">Nema dolazaka u narednih 30 dana.</div>';
+
+  const q = $('q').value.trim().toLowerCase();
+  const ml = inMonth.filter(r => !q || [r.ime, r.tel, r.nap].join(' ').toLowerCase().includes(q)).sort((a,b) => a.od.localeCompare(b.od));
+  $('mCnt').textContent = ml.length;
+  $('monthList').innerHTML = ml.length ? ml.map(card).join('') : '<div class="empty">Nema rezervacija. Dodirnite dan u kalendaru ili „+ Nova rezervacija”.</div>';
+  $('sub').textContent = `${data.filter(active).length} rezervacija ukupno`;
+}
+
+function card(r) {
+  const n = nightsBetween(r.od, r.do), dug = Math.max(0, (+r.cena||0) - (+r.avans||0));
+  const here = r.od <= today && today < r.do;
+  const tags = [
+    `<span class="tag">${SRC[r.izvor]||r.izvor}</span>`,
+    `<span class="tag">${(+r.odrasli||0)+(+r.deca||0)} os.</span>`,
+    r.ljubimac ? '<span class="tag">🐾 ljubimac</span>' : '',
+    r.status === 'upit' ? '<span class="tag warn">Upit</span>' : '',
+    r.status === 'otkazano' ? '<span class="tag off">Otkazano</span>' : '',
+    r.status !== 'otkazano' ? (r.placeno ? '<span class="tag ok">Plaćeno</span>' : `<span class="tag warn">Duguje ${money(dug)}</span>`) : '',
+    r.status === 'potvrdjeno' && !r.eturista ? '<span class="tag warn">eTurista ✗</span>' : (r.eturista ? '<span class="tag ok">eTurista ✓</span>' : ''),
+    here ? '<span class="tag ok">Trenutno ovde</span>' : '',
+  ].join('');
+  const tel = (r.tel||'').replace(/[^\d+]/g,'');
+  const intl = tel.startsWith('0') ? '+381' + tel.slice(1) : tel;
+  const act = tel ? `<div class="act"><a href="tel:${tel}" aria-label="Pozovi" onclick="event.stopPropagation()">📞</a><a href="viber://chat?number=${encodeURIComponent(intl)}" aria-label="Viber" onclick="event.stopPropagation()">💬</a></div>` : '<div></div>';
+  return `<div class="res" style="--c:${color(r.izvor)}" data-id="${r.id}">
+    <div><div class="nm">${esc(r.ime)}</div><div class="dt">${fmt(r.od)} → ${fmt(r.do)} · ${n} ${n===1?'noć':'noći'}${r.cena?' · '+money(r.cena):''}</div>
+    ${r.nap ? `<div class="dt">${esc(r.nap)}</div>` : ''}</div>${act}
+    <div class="tags">${tags}</div></div>`;
+}
+
+/* ---- forma ---- */
+const dlg = $('dlg'), frm = $('frm');
+let editing = null;
+function openForm(r = null, day = null) {
+  editing = r ? r.id : null;
+  frm.reset();
+  $('dlgTitle').textContent = r ? 'Izmena rezervacije' : 'Nova rezervacija';
+  $('delBtn').hidden = !r;
+  const v = r || { od: day || today, do: addDays(day || today, 2), odrasli: 2, deca: 0, avans: 0, izvor: 'telefon', status: 'potvrdjeno' };
+  for (const el of frm.elements) {
+    if (!el.name || !(el.name in v)) continue;
+    if (el.type === 'checkbox') el.checked = !!v[el.name]; else el.value = v[el.name];
+  }
+  calc(); dlg.showModal();
+}
+function readForm() {
+  const o = {};
+  for (const el of frm.elements) if (el.name) o[el.name] = el.type === 'checkbox' ? el.checked : el.value.trim();
+  return o;
+}
+function overlaps(o) {
+  return data.filter(r => r.id !== editing && active(r) && o.status !== 'otkazano' && r.od < o.do && o.od < r.do);
+}
+function calc() {
+  const o = readForm(), box = $('calc');
+  if (o.od && o.do && o.do <= o.od) { box.className = 'info err'; box.textContent = 'Datum odlaska mora biti posle dolaska.'; return false; }
+  const n = o.od && o.do ? nightsBetween(o.od, o.do) : 0;
+  const ov = o.od && o.do ? overlaps(o) : [];
+  let t = `${n} ${n===1?'noć':'noći'}`;
+  if (+o.cena) t += ` · ${money(o.cena/Math.max(n,1))} po noći · preostalo ${money(Math.max(0, o.cena - (+o.avans||0)))}`;
+  if (o.izvor === 'booking' && +o.cena) t += ` · neto ${money(o.cena*(1-cfg.provizija/100))}`;
+  if (ov.length) { box.className = 'info err'; box.textContent = `⚠ Preklapa se sa: ${ov.map(r => `${r.ime} (${fmt(r.od)}–${fmt(r.do)})`).join(', ')}. ` + t; }
+  else { box.className = 'info'; box.textContent = t; }
+  return true;
+}
+frm.addEventListener('input', e => {
+  if (e.target.name === 'od' && frm.do.value <= frm.od.value) frm.do.value = addDays(frm.od.value, 1);
+  if (e.target.name === 'placeno' && frm.placeno.checked && frm.cena.value) frm.avans.value = frm.cena.value;
+  calc();
+});
+frm.addEventListener('submit', e => {
+  if (e.submitter && e.submitter.value === 'cancel') return;
+  e.preventDefault();
+  if (!frm.reportValidity() || !calc()) return;
+  const o = readForm();
+  if (overlaps(o).length && !confirm('Termin se preklapa sa drugom rezervacijom. Ipak sačuvati?')) return;
+  if (editing) Object.assign(data.find(r => r.id === editing), o, { izmenjeno: new Date().toISOString() });
+  else data.push({ id: Date.now().toString(36) + Math.random().toString(36).slice(2,6), ...o, kreirano: new Date().toISOString() });
+  if (save()) { dlg.close(); toast('Sačuvano ✓'); view = parse(o.od); view.setDate(1); render(); }
+});
+$('cancelBtn').onclick = () => dlg.close();
+$('delBtn').onclick = () => {
+  const r = data.find(x => x.id === editing);
+  if (r && confirm(`Obrisati rezervaciju: ${r.ime}, ${fmt(r.od)}–${fmt(r.do)}?\n(Savet: umesto brisanja možete staviti status „Otkazano”.)`)) {
+    data = data.filter(x => x.id !== editing); save(); dlg.close(); render(); toast('Obrisano');
+  }
+};
+
+/* ---- klikovi ---- */
+$('grid').onclick = e => {
+  const b = e.target.closest('.bar'); if (b) return openForm(data.find(r => r.id === b.dataset.id));
+  const d = e.target.closest('.day'); if (d) openForm(null, d.dataset.d);
+};
+document.addEventListener('click', e => { const c = e.target.closest('.res'); if (c) openForm(data.find(r => r.id === c.dataset.id)); });
+$('addBtn').onclick = () => openForm();
+$('prev').onclick = () => { view.setMonth(view.getMonth()-1); render(); };
+$('next').onclick = () => { view.setMonth(view.getMonth()+1); render(); };
+$('todayBtn').onclick = () => { view = new Date(); view.setDate(1); render(); };
+$('q').oninput = render;
+let sx = 0; $('grid').addEventListener('touchstart', e => sx = e.touches[0].clientX, { passive: true });
+$('grid').addEventListener('touchend', e => { const dx = e.changedTouches[0].clientX - sx; if (Math.abs(dx) > 70) (dx < 0 ? $('next') : $('prev')).click(); });
+
+/* ---- meni: backup / izvoz ---- */
+const menu = $('menu');
+$('menuBtn').onclick = () => { $('prov').value = cfg.provizija; menu.showModal(); };
+$('prov').onchange = () => { cfg.provizija = Math.max(0, +$('prov').value || 0); store(SKEY, cfg); render(); };
+const download = (name, text, type) => {
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([text], { type })); a.download = name; a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+};
+$('expJson').onclick = () => { download(`kojivajat-rezervacije-${today}.json`, JSON.stringify({ verzija: 1, sacuvano: new Date().toISOString(), podesavanja: cfg, rezervacije: data }, null, 2), 'application/json'); toast('Rezervna kopija sačuvana'); };
+$('impJson').onchange = async e => {
+  const f = e.target.files[0]; if (!f) return;
+  try {
+    const j = JSON.parse(await f.text()); const arr = Array.isArray(j) ? j : j.rezervacije;
+    if (!Array.isArray(arr)) throw 0;
+    const ids = new Set(data.map(r => r.id)); const nova = arr.filter(r => r && r.id && r.od && r.do && !ids.has(r.id));
+    if (!confirm(`U fajlu: ${arr.length} rezervacija, od toga ${nova.length} novih. Dodati nove?`)) return;
+    data = data.concat(nova); if (j.podesavanja) { cfg = Object.assign(cfg, j.podesavanja); store(SKEY, cfg); }
+    save(); render(); menu.close(); toast(`Učitano ${nova.length} rezervacija`);
+  } catch { alert('Fajl nije ispravna rezervna kopija.'); }
+  e.target.value = '';
+};
+$('expCsv').onclick = () => {
+  const cols = [['ime','Gost'],['tel','Telefon'],['od','Dolazak'],['do','Odlazak'],['noci','Noći'],['odrasli','Odrasli'],['deca','Deca'],['izvor','Izvor'],['status','Status'],['cena','Cena'],['avans','Uplaćeno'],['placeno','Plaćeno'],['eturista','eTurista'],['ljubimac','Ljubimac'],['nap','Napomena']];
+  const rows = data.slice().sort((a,b) => a.od.localeCompare(b.od)).map(r => cols.map(([k]) => {
+    let v = k === 'noci' ? nightsBetween(r.od, r.do) : k === 'izvor' ? SRC[r.izvor] : typeof r[k] === 'boolean' ? (r[k] ? 'da' : 'ne') : (r[k] ?? '');
+    if (k === 'od' || k === 'do') v = v.split('-').reverse().join('.');
+    return '"' + String(v).replace(/"/g, '""') + '"';
+  }).join(';'));
+  download(`kojivajat-rezervacije-${today}.csv`, '﻿' + [cols.map(c => c[1]).join(';'), ...rows].join('\r\n'), 'text/csv;charset=utf-8');
+};
+$('printBtn').onclick = () => { menu.close(); setTimeout(print, 200); };
+
+function toast(t) { const el = $('toast'); el.textContent = t; el.classList.add('on'); clearTimeout(toast.t); toast.t = setTimeout(() => el.classList.remove('on'), 1800); }
+
+render();
+</script>
+</body>
+</html>
