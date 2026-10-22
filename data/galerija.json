@@ -31,8 +31,8 @@
       "kategorija": "in"
     },
     {
-      "slika": "/assets/img/terasa-cela.webp",
-      "natpis": "Drvena terasa celom dužinom kuće",
+      "slika": "/assets/img/spolja-orah2.webp",
+      "natpis": "Kućica i terasa u hladu oraha",
       "kategorija": "out"
     },
     {
@@ -84,11 +84,6 @@
       "slika": "/assets/img/kupatilo.webp",
       "natpis": "Kupatilo",
       "kategorija": "in"
-    },
-    {
-      "slika": "/assets/img/terasa-bok.webp",
-      "natpis": "Natkrivena terasa",
-      "kategorija": "out"
     },
     {
       "slika": "/assets/img/dnevna-2.webp",
